@@ -1,0 +1,56 @@
+<!--page/taobao/index.wxml-->
+<view class="index">
+ <view class="header">
+  <image src="../../../image/tao.png"></image>
+
+  <input type="text" />
+  <view class="search">
+   <image src="../../../image/search.png"></image>
+   <text>寻找宝贝店铺</text>
+  </view>
+ </view>
+
+ <view class="banner">
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}"
+    duration="{{duraton}}">
+    <block wx:for="{{imgUrls}}">
+     <swiper-item>
+      <image src="{{item}}" class="banner-img slide-image"></image>
+     </swiper-item>
+    </block>
+  </swiper>
+ </view>
+
+ <image src="http://img.alicdn.com/tps/TB13LWiOXXXXXbJXFXXXXXXXXXX-1125-336.png" class="banner-2"></image>
+
+ <view class="menu-wrp">
+  <view class="menu-list" wx:for="{{menu.imgUrls}}">
+   <image src="{{item}}" class="menu-img"></image>
+   <view class="menu-desc">{{menu.descs[index]}}</view>
+  </view>
+ </view>
+
+ <view class="gap-1"></view>
+ <view class="tb-toppest">
+  <image src="http://gw.alicdn.com/tps/i3/TB12wM3HXXXXXbxapXXdFmWHFXX-207-60.png?imgtag=avatar"></image>
+  <view class="btn">双11</view>
+  <view class="content">你家跑步机有那么安静吗？</view>
+ </view>
+ <view class="gap-2"></view>
+
+ <view class="banner-3">
+  <image src="../../../image/banner3_title.png" class="title"></image>
+  <view class="content">
+   <view class="item" wx:for="{{banner3_title}}" wx:for-index="idx" wx:for-item="item">
+    <view class="_title">{{item}}</view>
+    <view class="_img_box">
+     <image src="{{banner3_img[idx]}}" class="_img"></image>
+    </view>
+    <view class="_desc_bg">
+     {{banner3_desc[idx]}}
+    </view>
+   </view>
+  </view>
+ </view>
+</view>
