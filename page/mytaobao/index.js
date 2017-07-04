@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+   btn_login:"登录"
+  },
+  login:function(){
+    this.setData({
+      btn_login:"正在登录中..."
+    })
   },
 
   /**
@@ -26,7 +31,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.showNavigationBarLoading();
+    wx.setNavigationBarTitle({
+      title: '我的淘宝',
+    })
   },
 
   /**

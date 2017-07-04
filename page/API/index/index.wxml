@@ -1,2 +1,8 @@
 <!--page/API/index/index.wxml-->
-<text>page/API/index/index.wxml</text>
+<view class="container">
+ <view class="header">
+  <view class="title">小程序接口</view>
+  <view class="desc">这里就当前已支持接口能力进行演示</view>
+ </view>
+ 
+</view>

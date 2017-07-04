@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+   text:"购物车页面，正在开发，敬请期待。。。"
   },
 
   /**
@@ -33,7 +33,10 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+   wx.showNavigationBarLoading();
+   wx.setNavigationBarTitle({
+     title: '我的购物车',
+   })
   },
 
   /**
