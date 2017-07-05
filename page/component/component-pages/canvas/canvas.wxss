@@ -1,1 +1,5 @@
-/* page/component/component-pages/canvas/canvas.wxss */
+.canvas {
+  width: 305px;
+  height: 305px;
+  background-color: #fff;
+}

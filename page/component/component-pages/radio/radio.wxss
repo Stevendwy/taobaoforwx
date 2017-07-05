@@ -1,1 +1,4 @@
-/* page/component/component-pages/radio/radio.wxss */
+.radio {
+  display: block;
+  margin-bottom: 20rpx;
+}

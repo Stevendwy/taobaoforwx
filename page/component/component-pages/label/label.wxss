@@ -1,1 +1,8 @@
-/* page/component/component-pages/label/label.wxss */
+.label-1, .label-2{
+  margin-bottom: 30rpx;
+}
+
+.label-4_text{
+  text-align: center;
+  margin-top: 30rpx;
+}

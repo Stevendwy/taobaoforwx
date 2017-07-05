@@ -1,1 +1,4 @@
-/* page/component/component-pages/picker/picker.wxss */
+.picker{
+  padding: 26rpx;
+  background-color: #FFFFFF;
+}

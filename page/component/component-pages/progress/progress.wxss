@@ -1,1 +1,3 @@
-/* page/component/component-pages/progress/progress.wxss */
+progress{
+  margin-bottom: 60rpx;
+}
