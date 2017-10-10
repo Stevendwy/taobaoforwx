@@ -1,92 +1,66 @@
-var app = getApp()
-var util = require('../../../util/util.js')
-var dataUrl = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
+// page/API/background-audio/background-audio.js
 Page({
-  onLoad: function () {
-    var that = this
-    this._enableInterval()
 
-    if (app.globalData.backgroundAudioPlaying) {
-      this.setData({
-        playing: true
-      })
-    }
-  },
+  /**
+   * 页面的初始数据
+   */
   data: {
-    playing: false,
-    playTime: 0,
-    formatedPlayTime: '00:00:00'
+  
   },
-  play: function (res) {
-    var that = this
-    wx.playBackgroundAudio({
-      dataUrl: dataUrl,
-      title: '此时此刻',
-      coverImgUrl: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
-      complete: function (res) {
-        that.setData({
-          playing: true
-        })
-      }
-    })
-    this._enableInterval()
-    app.globalData.backgroundAudioPlaying = true
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+  
   },
-  seek: function (e) {
-    clearInterval(this.updateInterval)
-    var that = this
-    wx.seekBackgroundAudio({
-      position: e.detail.value,
-      complete: function () {
-        // 实际会延迟两秒左右才跳过去
-        setTimeout(function () {
-          that._enableInterval()
-        }, 2000)
-      }
-    })
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
   },
-  pause: function () {
-    var that = this
-    wx.pauseBackgroundAudio({
-      dataUrl: dataUrl,
-      success: function () {
-        that.setData({
-          playing: false
-        })
-      }
-    })
-    app.globalData.backgroundAudioPlaying = false
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
   },
-  stop: function () {
-    var that = this
-    wx.stopBackgroundAudio({
-      dataUrl: dataUrl,
-      success: function (res) {
-        that.setData({
-          playing: false,
-          playTime: 0,
-          formatedPlayTime: util.formatTime(0)
-        })
-      }
-    })
-    app.globalData.backgroundAudioPlaying = false
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+  
   },
-  _enableInterval: function () {
-    var that = this
-    update()
-    this.updateInterval = setInterval(update, 500)
-    function update() {
-      wx.getBackgroundAudioPlayerState({
-        success: function (res) {
-          that.setData({
-            playTime: res.currentPosition,
-            formatedPlayTime: util.formatTime(res.currentPosition + 1)
-          })
-        }
-      })
-    }
-  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
   onUnload: function () {
-    clearInterval(this.updateInterval)
+  
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  
   }
 })

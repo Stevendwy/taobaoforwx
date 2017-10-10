@@ -1,6 +1,1 @@
-.navigator-hover button{
-  background-color:blue;
-}
-.other-navigator-hover button{
-  background-color:red;
-}
+/* page/component/component-pages/navigator/navigator.wxss */

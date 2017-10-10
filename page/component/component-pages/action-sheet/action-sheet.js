@@ -1,27 +1,66 @@
-var items = ['item1', 'item2', 'item3', 'item4']
-var pageObject = {
+// page/component/component-pages/action-sheet/action-sheet.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    actionSheetHidden: true,
-    actionSheetItems: items
+  
   },
-  actionSheetTap: function(e) {
-    this.setData({
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+  
   },
-  actionSheetChange: function(e) {
-    this.setData({
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+  
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  
   }
-}
-
-for (var i = 0; i < items.length; ++i) {
-  (function(itemName) {
-    pageObject['bind' + itemName] = function(e) {
-      console.log('click' + itemName, e)
-    }
-  })(items[i])
-}
-
-Page(pageObject)
+})

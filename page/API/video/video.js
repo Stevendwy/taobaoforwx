@@ -1,49 +1,66 @@
-var sourceType = [ ['camera'], ['album'], ['camera', 'album'] ]
-var camera = [ ['front'], ['back'], ['front', 'back'] ]
-var duration = Array.apply(null, {length: 60}).map(function (n, i) {
-  return i + 1
-})
-
+// page/API/video/video.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    sourceTypeIndex: 2,
-    sourceType: ['拍摄', '相册', '拍摄或相册'],
+  
+  },
 
-    cameraIndex: 2,
-    camera: ['前置', '后置', '前置或后置'],
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+  
+  },
 
-    durationIndex: 59,
-    duration: duration.map(function (t) { return t + '秒'}),
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
+  },
 
-    src: ''
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
   },
-  sourceTypeChange: function (e) {
-    this.setData({
-      sourceTypeIndex: e.detail.value
-    })
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+  
   },
-  cameraChange: function (e) {
-    this.setData({
-      cameraIndex: e.detail.value
-    })
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+  
   },
-  durationChange: function (e) {
-    this.setData({
-      durationIndex: e.detail.value
-    })
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
   },
-  chooseVideo: function () {
-    var that = this
-    wx.chooseVideo({
-      sourceType: sourceType[this.data.sourceTypeIndex],
-      camera: camera[this.data.cameraIndex],
-      duration: duration[this.durationIndex],
-      success: function (res) {
-        console.log(res)
-        that.setData({
-          src: res.tempFilePath
-        })
-      }
-    })
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  
   }
 })

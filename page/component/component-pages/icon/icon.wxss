@@ -1,4 +1,1 @@
-.group{
-  flex-direction: row;
-  align-items: center;
-}
+/* page/component/component-pages/icon/icon.wxss */
